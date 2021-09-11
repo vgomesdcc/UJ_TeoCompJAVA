@@ -2,20 +2,33 @@ import java.util.Scanner;
 
 class Main {
 	public static void main(String[] args) {
-    Scanner teste1 = new Scanner(System.in);
-    System.out.println("Digite o primeiro numero:");
-    int numerador = teste1.nextInt();  
+    Scanner entrada = new Scanner(System.in);
+    System.out.println("Digite os numeros:");
 
-    Scanner teste2 = new Scanner(System.in);
-    System.out.println("Digite o segundo numero:");  
-    int denominador = teste2.nextInt();   
-    
-    if (numerador%denominador==0) {
-      System.out.println("Divisores perfeitos");
+    int perfeito1 = entrada.nextInt(); 
+    int perfeito2 = entrada.nextInt(); 
+
+    int flag1=0;
+    int flag2=0;
+
+    for(int i=1; i<perfeito1; i++){
+     if(perfeito1%i==0){
+        flag1+=i;
+      }
     }
 
-    else {
-      System.out.println("Nao sao divisores perfeitos");
+    for(int z=1; z<perfeito2; z++){
+     if(perfeito2%z==0){
+        flag2+=z;
+      }
     }
-	}
-} 
+
+    if(perfeito1==flag1 && perfeito2==flag2){
+      System.out.println("Sao divisores perfeitos\n");
+    }
+
+    else
+      System.out.println("Nao sao divisores perfeitos\n");
+
+  }
+}
